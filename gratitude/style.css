@@ -118,7 +118,7 @@ body {
 
 .cards .card.card-r .content .logo-abs {
     position: absolute;
-    top: 4rem;
+    bottom: 4rem;
     right: 2rem;
     opacity: 0.8;
 }
@@ -160,6 +160,10 @@ body {
 }
 
 @media (orientation: portrait) {
+
+}
+
+@media only screen and (max-width: 767px) {
     body {
         align-items: inherit;
     }
@@ -197,7 +201,7 @@ body {
     }
 
     .cards .card-l .hints {
-        writing-mode: inherit;
+        writing-mode: tb;
         right: 1rem;
         bottom: 2.5rem;
         font-size: 10vh;
@@ -214,11 +218,7 @@ body {
         opacity: 0.5;
         display: none;
     }
-
-    .cards .card-l .hints .hint {
-        writing-mode: tb;
-    }
-
+    
     .cards .card.card-r .content p {
         margin: 0.32rem;
     }
