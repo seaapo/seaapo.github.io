@@ -1,0 +1,132 @@
+body {
+    letter-spacing: 1px;
+    background-color: rgba(223, 226, 235, 1);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    width: 80vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0px 10px 20px 5px rgba(198, 198, 208, 1);
+    display: flex;
+    justify-content: center;
+}
+
+.cards .card {
+    padding: 2rem;
+    position: relative;
+}
+
+.cards .card-l {
+    background-color: rgba(78, 86, 125, 1);
+    width: 25%;
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: #fff;
+}
+
+.cards .card-r {
+    background-color: #fff;
+    width: 75%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    background-image: url(./resources/bg_littlefoot.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cards .card .menus {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .card .menus > .menu {
+    width: 4rem;
+    height: 4rem;
+    background: rgb(208 222 223 / 50%);
+    border-left: 10px solid rgb(196 200 221 / 80%);
+    margin: 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card .menus > .menu:hover {
+    cursor: pointer;
+}
+
+.cards .card .menus > .menu:not(.active):hover {
+    border-color: rgba(125, 133, 172, 0.6);
+    background: rgb(208 222 223 / 80%);
+}
+
+.cards .card .menus > .menu.active {
+    border-color: rgba(240, 111, 105);
+}
+
+.cards .card .menus > .menu > .icon {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.cards .card .menus > .menu:not(.active):hover > .icon {
+    color: rgba(78, 86, 125, 1);
+}
+
+.cards .card.card-l {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .card.card-l .date {
+    margin-top: auto;
+    text-align: right;
+} 
+
+.cards .card-l .hints {
+    writing-mode: vertical-lr;
+    position: absolute;
+    right: 2rem;
+    bottom: 3.5rem;
+    font-size: 8rem;
+    opacity: 0.2;
+}
+
+.cards .card .content {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+}
+
+.cards .card.card-r .content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cards .card.card-r .content .qrcode-img {
+    max-width: 10vw;
+}
+
+.cards .card.card-r .content .qrcode-link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    color: #d27445;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.name {
+    font-weight: bold;
+}
