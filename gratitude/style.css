@@ -10,7 +10,7 @@ body {
 
 .cards {
     width: 80vw;
-    height: 60vh;
+    height: 70vh;
     border-radius: 0.5rem;
     box-shadow: 0px 10px 20px 5px rgba(198, 198, 208, 1);
     display: flex;
@@ -91,16 +91,16 @@ body {
 .cards .card-l .hints {
     writing-mode: vertical-lr;
     position: absolute;
-    right: 2rem;
+    right: 1.5rem;
     bottom: 3.5rem;
-    font-size: 8rem;
+    font-size: 6rem;
     opacity: 0.2;
 }
 
 .cards .card .content {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0 2rem 1.5rem 2rem;
-    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1.2rem;
 }
 
 .cards .card.card-r .content {
@@ -108,12 +108,19 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
+    height: calc(70vh - 6rem);
+    overflow-y: auto;
+}
+
+.cards .card.card-r .content p:first-child {
+    margin-top: 0;
 }
 
 .cards .card.card-r .content .logo-abs {
     position: absolute;
-    bottom: 2rem;
+    top: 4rem;
     right: 2rem;
+    opacity: 0.8;
 }
 
 .cards .card.card-r .content .qrcode-img {
@@ -171,6 +178,7 @@ body {
         border-radius: 0.5rem 0.5rem 0 0;
         width: auto;
         height: 25%;
+        position: relative;
     }
 
     .cards .card-r {
@@ -185,7 +193,7 @@ body {
     }
 
     .cards .card .content {
-        padding: 0 1.5rem 1rem 1.5rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
     }
 
     .cards .card-l .hints {
@@ -197,16 +205,21 @@ body {
     }
 
     .cards .card.card-r .content .qrcode-img {
-        max-width: 10vh;
+        max-width: 14vh;
     }
 
     .cards .card.card-r .content .logo-abs {
         bottom: 1rem;
         right: 1rem;
         opacity: 0.5;
+        display: none;
     }
 
     .cards .card-l .hints .hint {
         writing-mode: tb;
+    }
+
+    .cards .card.card-r .content p {
+        margin: 0.32rem;
     }
 }
