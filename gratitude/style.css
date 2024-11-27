@@ -44,7 +44,7 @@ body {
     z-index: 1;
 }
 
-.cards .card .menus > .menu {
+.cards .card .menus>.menu {
     width: 4rem;
     height: 4rem;
     background: rgb(208 222 223 / 50%);
@@ -56,25 +56,25 @@ body {
     align-items: center;
 }
 
-.cards .card .menus > .menu:hover {
+.cards .card .menus>.menu:hover {
     cursor: pointer;
 }
 
-.cards .card .menus > .menu:not(.active):hover {
+.cards .card .menus>.menu:not(.active):hover {
     border-color: rgba(125, 133, 172, 0.6);
     background: rgb(208 222 223 / 80%);
 }
 
-.cards .card .menus > .menu.active {
+.cards .card .menus>.menu.active {
     border-color: rgba(240, 111, 105);
 }
 
-.cards .card .menus > .menu > .icon {
+.cards .card .menus>.menu>.icon {
     font-size: 2rem;
     color: #fff;
 }
 
-.cards .card .menus > .menu:not(.active):hover > .icon {
+.cards .card .menus>.menu:not(.active):hover>.icon {
     color: rgba(78, 86, 125, 1);
 }
 
@@ -86,7 +86,7 @@ body {
 .cards .card.card-l .date {
     margin-top: auto;
     text-align: right;
-} 
+}
 
 .cards .card-l .hints {
     writing-mode: vertical-lr;
@@ -125,7 +125,7 @@ body {
     text-align: center;
 }
 
-.cards .card.card-r .content .qrcode-link > a {
+.cards .card.card-r .content .qrcode-link>a {
     color: rgba(78, 86, 125, 1);
     font-weight: bold;
     background: #fff;
@@ -146,4 +146,63 @@ body {
 
 .name {
     font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+@media (orientation: portrait) {
+    .cards {
+        width: 90vw;
+        height: 95vh;
+        flex-direction: column;
+    }
+
+    .cards .card {
+        padding: 1rem;
+    }
+
+    .cards .card-l {
+        border-radius: 0.5rem 0.5rem 0 0;
+        width: auto;
+        height: 25%;
+    }
+
+    .cards .card-r {
+        width: auto;
+        height: 75%;
+        border-radius: 0 0 0.5rem 0.5rem;
+        overflow-y: auto;
+    }
+
+    .cards .card .menus {
+        flex-direction: row;
+    }
+
+    .cards .card .content {
+        padding: 1.5rem;
+    }
+
+    .cards .card-l .hints {
+        writing-mode: inherit;
+        right: 1rem;
+        bottom: 2.5rem;
+        font-size: 10vh;
+        opacity: 0.2;
+    }
+
+    .cards .card.card-r .content .qrcode-img {
+        max-width: 10vh;
+    }
+
+    .cards .card.card-r .content .logo-abs {
+        bottom: 1rem;
+        right: 1rem;
+        opacity: 0.5;
+    }
+
+    .cards .card-l .hints .hint {
+        writing-mode: tb;
+    }
 }
