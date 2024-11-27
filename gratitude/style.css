@@ -125,6 +125,15 @@ body {
     text-align: center;
 }
 
+.cards .card.card-r .content .qrcode-link > a {
+    color: rgba(78, 86, 125, 1);
+    font-weight: bold;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    letter-spacing: 5px;
+}
+
 .hidden {
     display: none;
 }
