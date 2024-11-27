@@ -41,6 +41,7 @@ body {
 .cards .card .menus {
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .cards .card .menus > .menu {
