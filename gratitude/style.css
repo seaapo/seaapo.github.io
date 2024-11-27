@@ -106,6 +106,13 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.cards .card.card-r .content .logo-abs {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
 }
 
 .cards .card.card-r .content .qrcode-img {
