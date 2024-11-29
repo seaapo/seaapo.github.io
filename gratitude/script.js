@@ -6,7 +6,7 @@ const default_thank_p = [
     '~~ 真摯感謝 ~~',
     '{{people}}',
     '參與搜救，',
-    '以及幕後協助的夥伴，',
+    '{{descs}}，',
     '感謝有您，寒溪搜救有了最暖的結果！'
 ];
 
@@ -17,6 +17,8 @@ const default_question_p = [
     '作為未來改進搜救工作的方向參考。'
 ];
 
+const default_desc = '以及幕後協助的夥伴';
+
 const datas = [
     { name: '台灣樂山協會', peoples: ['劉崑耀', '周子溱', '陳瀅年', '楊懿惟', '張歆儀', '郭宜帆'] },
     { name: '宜蘭登山協會', peoples: ['陳正輝(飛鴿)', '呂文賢(飛鼠)', '林蒼淯'] },
@@ -26,6 +28,7 @@ const datas = [
     { name: '北搜', peoples: ['王耀輝', '徐淑慧', '林家毅', '陳韻涵', '吳聖銘', '陶義明', '吳愷祥', '廖坤聰', '楊翰昌'] },
     { name: '東搜', peoples: ['陸怡君', '王思元', '張光承', '陳文昌', '陳裕濠', '鄭文祥', '陳品維', '徐佳玲', '李美琪', '張益銘', '吳勁宏', '彭濬杰'] },
     { name: '台北市義消山仔后山搜分隊', peoples: ['陳力仁'] },
+    { name: '臺灣基督長老教會-寒溪教會', peoples: ['黃志堅牧師'], descs: ['並領禱求主庇佑'] },
     { name: '警消與林業署', peoples: [
         '宋良軍', '余志明',
         '江冀聖', '林光正', '林佶戊', '周煇凱', '盧建宇',
@@ -46,10 +49,8 @@ window.onload = () => {
     const contentThank = document.getElementById('content-thank');
     const contentQuestion = document.getElementById('content-questionnaire');
 
-    console.log('--- window url', window.location.href);
     const url_pieces = decodeURIComponent(window.location.href).split('/');
     const organization = url_pieces[url_pieces.length - 2];
-    console.log('---- organization: ', organization);
 
     const data = datas.find(d => d.name === organization);
     if (data) {
@@ -87,6 +88,9 @@ function createThankContent(template, data, container) {
         if (text.indexOf('{{people}}') >= 0) {
             text = text.replace(/{{people}}/, data.peoples.join('、'));
             p.classList.add('name');
+        }
+        if (text.indexOf('{{descs}}') >= 0) {
+            text = text.replace(/{{descs}}/, data.descs?.join('，') || default_desc);
         }
         p.innerHTML = text;
         container.appendChild(p);
